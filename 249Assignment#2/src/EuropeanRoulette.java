@@ -15,10 +15,4 @@ public class EuropeanRoulette extends RouletteGame
 	public String[] getLayout() {
 		return LAYOUT;
 	}
-
-	@Override
-	public void spin() {
-		// TODO Auto-generated method stub
-		
-	}
 }
