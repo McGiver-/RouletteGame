@@ -1,4 +1,5 @@
 
+
 public class Dealer
 {
 	private double winningsPersonThisRound;
