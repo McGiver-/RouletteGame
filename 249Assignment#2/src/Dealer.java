@@ -6,6 +6,7 @@ public class Dealer
 	private double winningsPersonThisRound;
 	private RouletteGame game;
 	
+	
 	public Dealer()
 	{
 		round=0;
@@ -15,11 +16,16 @@ public class Dealer
 		return rand.nextInt(wheel.getLayout().length);
 	}
 	
+	public void calculateWinnings(final int winningNumber) {
+		
+	}
+	
 	public void setRouletteGame(RouletteGame rg) {
 		game = rg;
 	}
 	
-	public void spinRoulette() {
-		game.spin();
+	public void turnWheel() {
+		int winningNumber = game.spin();
+		calculateWinnings(winningNumber);
 	}
 }

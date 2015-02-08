@@ -1,8 +1,10 @@
+import java.util.List;
+
 
 public abstract class RouletteGame 
 {
-	private String[] layout;
 	public double tableWinnings;
+	private List<Player> players;
 	
 	public void addWinnings(double winningsThisRound)
 	{
@@ -13,14 +15,27 @@ public abstract class RouletteGame
 		tableWinnings=0;
 	}
 	
-	public void displayTable() {
-		for (String item : layout) {
-			System.out.print(item + " ");
+	public String toString() {
+		String output = "";
+		for (String item : getLayout()) {
+			output += item + " ";
 		}
-		System.out.println();
+		
+		output += "\n";
+		return output;
+	}
+	
+	public void addPlayer(Player player) {
+		players.add(player);
+	}
+	
+	public Player removePlayer(int index) {
+		return players.remove(index);
 	}
 	
 	public abstract String[] getLayout();
 	
-	public abstract void spin();
+	public int spin() {
+		return 0;
+	}
 }
