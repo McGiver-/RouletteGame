@@ -1,10 +1,12 @@
-import java.util.List;
+import java.util.Random;
 
 
 public abstract class RouletteGame 
 {
+	private static Random rand = new Random();
 	public double tableWinnings;
-	private List<Player> players;
+	private Player[] players;
+	private int round;
 	
 	public void addWinnings(double winningsThisRound)
 	{
@@ -13,6 +15,8 @@ public abstract class RouletteGame
 	public RouletteGame()
 	{
 		tableWinnings=0;
+		round = 1;
+		players = new Player[6];		
 	}
 	
 	public String toString() {
@@ -25,17 +29,22 @@ public abstract class RouletteGame
 		return output;
 	}
 	
-	public void addPlayer(Player player) {
-		players.add(player);
+	public void setPlayer(Player player, int index) {
+		players[index] = player;
 	}
 	
-	public Player removePlayer(int index) {
-		return players.remove(index);
+	public void removePlayer(int index) {
+		players[index] = null;
+	}
+	
+	public Player[] getPlayers() {
+		return players;
 	}
 	
 	public abstract String[] getLayout();
 	
 	public int spin() {
-		return 0;
+		round++;
+		return rand.nextInt(getLayout().length);
 	}
 }
