@@ -1,6 +1,11 @@
 
-public class vip extends Player
+public class VIP extends Player
 {
-	public double percentOfWinnings = .10;
+	static final double vipPercent = .10;
+	public int token;
 
+	public VIP()
+	{
+		super(vipPercent);
+	}
 }
