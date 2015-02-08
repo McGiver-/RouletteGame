@@ -8,6 +8,10 @@ public class RouletteDriver {
 		dealer.setRouletteGame(game);
 		
 		System.out.println(game);
+		
+		/*dealer.inputBets();
+		dealer.turnWheel();
+		dealer.announceWinnings();*/
 	}
 
 }
