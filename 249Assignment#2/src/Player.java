@@ -9,7 +9,7 @@ public class Player {
 
 	public void addCurrentValue(double myWinningsThisRound)
 	{
-		currentValue= currentValue+myWinningsThisRound*percentOfWinnings;
+		currentValue= currentValue+myWinningsThisRound;
 	}
 	
 	public Player()
