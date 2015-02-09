@@ -59,4 +59,9 @@ public class Dealer
 		System.out.println("----------");
 		System.out.println(winningsAnnouncement);
 	}
+	
+	public String toString() {
+		// TODO Dealer string representation
+		return "";
+	}
 }

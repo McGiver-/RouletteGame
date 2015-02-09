@@ -7,9 +7,9 @@ public class RouletteDriver {
 		Dealer dealer = new Dealer();
 		dealer.setRouletteGame(game);
 		
-		game.setPlayer(new Player(), 0);
-		game.setPlayer(new Player(), 1);
-		game.setPlayer(new VIP(), 2);
+		game.setPlayer(new Player("Test 1"), 0);
+		game.setPlayer(new Player("Test 2"), 1);
+		game.setPlayer(new VIP("VIP test"), 2);
 		
 		System.out.println(game);
 		
