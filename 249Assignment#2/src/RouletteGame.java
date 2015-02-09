@@ -6,6 +6,7 @@ public abstract class RouletteGame {
 	private Player[] players;
 	private int round;
 	public static final int MAX_PLAYERS = 6;
+	public static final int MAX_STRAIGHT_NUMBERS = 5;
 
 	public void addWinnings(double winningsThisRound) {
 		this.tableWinnings = +winningsThisRound;

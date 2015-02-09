@@ -7,14 +7,10 @@ public class Dealer
 	private String winningsAnnouncement;
 	
 	
-	public Dealer() {
-	}
-	
 	public void calculateWinnings(final int winningNumber) {
 		Player[] players = game.getPlayers();
 		for (int playerIndex = 0; playerIndex < players.length; playerIndex++) {
 			if (players[playerIndex] != null) {
-				// TODO Make this work once player class is finished
 				int[] bets = players[playerIndex].getBets();
 				
 				for (int betIndex = 0; betIndex < bets.length; betIndex++) {
@@ -49,7 +45,7 @@ public class Dealer
 		Player[] players = game.getPlayers();
 		for (int i = 0; i < players.length; i++) {
 			if (players[i] != null) {
-				int[] bets = InputHelper.inputMaxNumbers("Player " + i + ": ", 5);
+				int[] bets = InputHelper.inputMaxNumbers("Player " + i + ": ", RouletteGame.MAX_STRAIGHT_NUMBERS);
 				
 				for (int tokenSpot = 0; tokenSpot < bets.length; tokenSpot++) {
 					players[i].setToken(tokenSpot, bets[tokenSpot]);
