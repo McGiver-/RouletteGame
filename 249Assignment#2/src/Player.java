@@ -25,4 +25,12 @@ public class Player {
 	{
 		this.betSpots[number]=spot;
 	}
+	
+	public int[] getBets() {
+		int[] bets = new int[betSpots.length];
+		for (int i = 0; i < betSpots.length; i++) {
+			bets[i] = betSpots[i];
+		}
+		return bets;
+	}
 }

@@ -5,6 +5,7 @@ public abstract class RouletteGame {
 	public double tableWinnings;
 	private Player[] players;
 	private int round;
+	public static final int MAX_PLAYERS = 6;
 
 	public void addWinnings(double winningsThisRound) {
 		this.tableWinnings = +winningsThisRound;
@@ -13,7 +14,7 @@ public abstract class RouletteGame {
 	public RouletteGame() {
 		tableWinnings = 0;
 		round = 1;
-		players = new Player[6];
+		players = new Player[MAX_PLAYERS];
 	}
 
 	public String toString() {
@@ -43,5 +44,9 @@ public abstract class RouletteGame {
 	public int spin() {
 		round++;
 		return rand.nextInt(getLayout().length);
+	}
+	
+	public int getRound() {
+		return round;
 	}
 }
