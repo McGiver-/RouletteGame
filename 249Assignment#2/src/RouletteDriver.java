@@ -17,6 +17,7 @@ public class RouletteDriver {
 			dealer.inputBets();
 			dealer.turnWheel();
 			dealer.announceWinnings();
+			System.out.println(game);
 		} while(game.getRound() < 10);
 		
 	}

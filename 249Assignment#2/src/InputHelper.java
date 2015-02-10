@@ -32,7 +32,7 @@ public class InputHelper {
 		String[] inputs;
 		do {
 			System.out.print(inputText);
-			inputs = keyboard.nextLine().split(" ");
+			inputs = keyboard.nextLine().trim().split(" ");
 			
 			for (int i = 0; i < inputs.length; i++) {
 				inputs[i] = game.stringToStraightNumber(inputs[i]);
