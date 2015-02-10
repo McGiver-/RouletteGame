@@ -89,4 +89,17 @@ public abstract class Player {
 	public void setCurrentValue(double currentValue) {
 		this.currentValue = currentValue;
 	}
+	public boolean equals(Player p)
+	{
+		boolean sameBets =false;
+		for (int i=0;i<this.getBets().length;i++)
+			{
+			 if (this.getBets()[i]==p.getBets()[i])
+				 sameBets=true;
+			}
+		return (this.getCurrentValue()==p.getCurrentValue()
+				&&this.getTimesBet()==p.getTimesBet()
+				&&sameBets
+				&&this.getName().equals(getName()));
+	}
 }

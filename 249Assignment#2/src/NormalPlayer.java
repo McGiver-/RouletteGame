@@ -19,4 +19,21 @@ public class NormalPlayer extends Player
 		
 		return false;
 	}
+	public boolean equals(NormalPlayer p)
+	{
+		return (super.equals(p)
+				&&this.getTOKEN_WORTH()==p.getTOKEN_WORTH());
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getTOKEN_WORTH() {
+		return TOKEN_WORTH;
+	}
 }

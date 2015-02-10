@@ -23,4 +23,28 @@ public class VIP extends Player
 		
 		return getTimesBet()*TOKEN_WORTH;
 	}
+	// not sure if take vip or player as argument
+	public boolean equals(VIP p)
+	{
+		return (super.equals(p)
+				&&this.getCurrentFakeVal()==p.getCurrentFakeVal()
+				&&this.getPERCENT_TOTAL_WINNINGS()==p.getPERCENT_TOTAL_WINNINGS()
+				&&this.getTOKEN_WORTH()==p.getTOKEN_WORTH()
+				&&this.getVIP_Percent()==p.getVIP_Percent());
+	}
+	public double getCurrentFakeVal() {
+		return currentFakeVal;
+	}
+	public void setCurrentFakeVal(double currentFakeVal) {
+		this.currentFakeVal = currentFakeVal;
+	}
+	public double getVIP_Percent() {
+		return VIP_Percent;
+	}
+	public double getPERCENT_TOTAL_WINNINGS() {
+		return PERCENT_TOTAL_WINNINGS;
+	}
+	public int getTOKEN_WORTH() {
+		return TOKEN_WORTH;
+	}
 }
