@@ -6,7 +6,6 @@ public class Dealer
 	private RouletteGame game;
 	private String winningsAnnouncement;
 	
-	
 	public void calculateWinnings(final int winningNumber) {
 		Player[] players = game.getPlayers();
 		for (int playerIndex = 0; playerIndex < players.length; playerIndex++) {
@@ -38,6 +37,7 @@ public class Dealer
 		winningsAnnouncement += winningNumber + " is the winning number.";
 		calculateWinnings(winningNumber);
 	}
+	
 
 	public void inputBets() {
 		System.out.println();

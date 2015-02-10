@@ -2,7 +2,6 @@
 public class Player {
 
 	public double currentValue = 0;
-	public double currentFakeVal=0;
 	public double percentOfWinnings;
 	int[] betSpots = new int[5];
 	public final int timesBet = 35;
@@ -10,9 +9,9 @@ public class Player {
 	private String name;
 
 
-	public void addCurrentValue(double myWinningsThisRound)
+	public void addCurrentValue()
 	{
-		currentValue= currentValue+myWinningsThisRound;
+		currentValue= currentValue+timesBet*token;
 	}
 	
 	public Player(String name)
@@ -36,7 +35,7 @@ public class Player {
 	{
 		this.betSpots[number]=spot;
 	}
-	
+	// does this give the right number of bets because they have the option to pick less than 5 numbers
 	public int[] getBets() {
 		int[] bets = new int[betSpots.length];
 		for (int i = 0; i < betSpots.length; i++) {
