@@ -7,11 +7,18 @@ public class RouletteDriver {
 		Dealer dealer = new Dealer();
 		dealer.setRouletteGame(game);
 		
+		game.setPlayer(new Player("Test 1"), 0);
+		game.setPlayer(new Player("Test 2"), 1);
+		game.setPlayer(new VIP("VIP test"), 2);
+		
 		System.out.println(game);
 		
-		/*dealer.inputBets();
-		dealer.turnWheel();
-		dealer.announceWinnings();*/
+		do {
+			dealer.inputBets();
+			dealer.turnWheel();
+			dealer.announceWinnings();
+		} while(game.getRound() < 10);
+		
 	}
 
 }
