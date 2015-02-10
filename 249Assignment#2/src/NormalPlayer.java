@@ -5,6 +5,10 @@ public class NormalPlayer extends Player
 	public NormalPlayer()
 	{
 		super();
-		token=TOKEN_WORTH;
+		this.setToken(TOKEN_WORTH);
 	}
+	public int getTOKEN_WORTH() {
+		return TOKEN_WORTH;
+	}
+	
 }

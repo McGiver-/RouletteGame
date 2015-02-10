@@ -1,11 +1,46 @@
 
 public class Player {
-	public double currentValue = 0;
-	public double currentFakeVal=0;
-	public double percentOfWinnings;
-	int[] betSpots = new int[5];
-	public final int timesBet = 35;
-	public int token =0;
+	private double currentValue = 0;
+	private double percentOfWinnings;
+	private int[] betSpots = new int[5];
+	private final int timesBet = 35;
+	private int token =0;
+
+	public double getCurrentValue() {
+		return currentValue;
+	}
+
+	public void setCurrentValue(double currentValue) {
+		this.currentValue = currentValue;
+	}
+
+	public double getPercentOfWinnings() {
+		return percentOfWinnings;
+	}
+
+	public void setPercentOfWinnings(double percentOfWinnings) {
+		this.percentOfWinnings = percentOfWinnings;
+	}
+
+	public int[] getBetSpots() {
+		return betSpots;
+	}
+
+	public void setBetSpots(int[] betSpots) {
+		this.betSpots = betSpots;
+	}
+
+	public int getToken() {
+		return token;
+	}
+
+	public void setToken(int token) {
+		this.token = token;
+	}
+
+	public int getTimesBet() {
+		return timesBet;
+	}
 
 	public void addCurrentValue(double myWinningsThisRound)
 	{
@@ -14,7 +49,6 @@ public class Player {
 	
 	public Player()
 	{
-		currentFakeVal =0;
 		currentValue =0;
 		percentOfWinnings=0;
 		int[] betSpots = new int[5];
