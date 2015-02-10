@@ -45,6 +45,7 @@ public class Dealer
 		int winningNumber = game.spin();
 		winningsAnnouncement += winningNumber + " is the winning number.";
 		calculateWinnings(winningNumber);
+		game.resetBets();
 	}
 	
 
@@ -54,8 +55,7 @@ public class Dealer
 		Player[] players = game.getPlayers();
 		for (int i = 0; i < players.length; i++) {
 			if (players[i] != null) {
-				int[] bets = InputHelper.inputMaxNumbers("Player " + i + ": ", RouletteGame.MAX_STRAIGHT_NUMBERS,
-						Player.EMPTY_BET_FILLER);
+				int[] bets = InputHelper.inputBets("Player " + i + ": ", game);
 				
 				for (int tokenSpot = 0; tokenSpot < bets.length; tokenSpot++) {
 					players[i].setToken(tokenSpot, bets[tokenSpot]);

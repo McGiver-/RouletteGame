@@ -65,4 +65,6 @@ public abstract class RouletteGame {
 		}
 		
 	}
+	
+	public abstract String stringToStraightNumber(String straight);
 }

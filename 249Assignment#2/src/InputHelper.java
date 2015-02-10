@@ -22,7 +22,8 @@ public class InputHelper {
 		return true;
 	}
 	
-	public static int[] inputMaxNumbers(String inputText, int length, int filler) {
+	public static int[] inputBets(String inputText, RouletteGame game) {
+		int maxBets = RouletteGame.MAX_STRAIGHT_NUMBERS;
 		
 		// input all the numbers as strings
 		String[] inputs;
@@ -31,7 +32,7 @@ public class InputHelper {
 			inputs = keyboard.nextLine().split(" ");
 			
 			// make sure they are integers
-			if (validateMaxIntegers(inputs, length)) {
+			if (validateMaxIntegers(inputs, maxBets)) {
 				break;
 			} else {
 				System.out.println("Bad input");
@@ -42,14 +43,14 @@ public class InputHelper {
 		
 		// we know the 'inputs' array contains only integers
 		// so, parse them
-		int[] numbers = new int[length];
+		int[] numbers = new int[maxBets];
 		for (int i = 0; i < inputs.length; i++) {
 			numbers[i] = Integer.parseInt(inputs[i]);
 		}
 		
-		if (inputs.length < length) {
-			for (int i = inputs.length; i < length; i++) {
-				numbers[i] = filler;
+		if (inputs.length < maxBets) {
+			for (int i = inputs.length; i < maxBets; i++) {
+				numbers[i] = Player.EMPTY_BET_FILLER;
 			}
 		}
 		

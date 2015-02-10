@@ -13,4 +13,9 @@ public class EuropeanRoulette extends RouletteGame {
 	public String[] getLayout() {
 		return LAYOUT;
 	}
+
+	@Override
+	public String stringToStraightNumber(String straight) {
+		return straight;
+	}
 }

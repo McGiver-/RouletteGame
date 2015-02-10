@@ -13,4 +13,13 @@ public class AmericanRoulette extends RouletteGame {
 		return LAYOUT;
 	}
 
+	@Override
+	public String stringToStraightNumber(String straight) {
+		if (straight.equals("00")) {
+			return "37";
+		} else {
+			return straight;
+		}
+	}
+
 }
