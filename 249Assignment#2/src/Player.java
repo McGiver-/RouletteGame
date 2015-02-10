@@ -10,9 +10,11 @@ public class Player {
 	public static final int EMPTY_BET_FILLER = -1;
 
 
-	public void addCurrentValue()
+	public int addCurrentValue()
 	{
 		currentValue= currentValue+timesBet*token;
+		
+		return timesBet*token;
 	}
 	
 	public Player(String name)

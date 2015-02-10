@@ -16,8 +16,11 @@ public class VIP extends Player
 	{// this is dependent on whether getbets.lenght gives me the number of bets the player placed
 		currentFakeVal=currentFakeVal+timesBet*VIP_Percent+getBets().length*PERCENT_TOTAL_WINNINGS;
 	}
-	public void addCurrentValue()
+	public int addCurrentValue()
 	{
 		currentValue= currentValue+timesBet*TOKEN_WORTH;
+		addFakeVal();
+		
+		return timesBet*TOKEN_WORTH;
 	}
 }
