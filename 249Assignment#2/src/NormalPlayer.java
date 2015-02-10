@@ -8,7 +8,7 @@ public class NormalPlayer extends Player
 	{
 
 		super(name);
-		token=TOKEN_WORTH;
+		setTokenValue(TOKEN_WORTH);
 	}
 	
 	public boolean equals(Player p) {

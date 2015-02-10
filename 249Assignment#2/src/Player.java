@@ -1,28 +1,29 @@
 
-public class Player {
+public abstract class Player {
 
 	public double currentValue = 0;
 	public double percentOfWinnings;
-	int[] betSpots = new int[5];
+	int[] betSpots;
 	public final int timesBet = 35;
-	public int token =0;
+	private int tokenValue = 0;
+
 	private String name;
 	public static final int EMPTY_BET_FILLER = -1;
 
 
 	public int addCurrentValue()
 	{
-		currentValue= currentValue+timesBet*token;
+		currentValue= currentValue+timesBet*tokenValue;
 		
-		return timesBet*token;
+		return timesBet*tokenValue;
 	}
 	
 	public Player(String name)
 	{
 		currentValue =0;
 		percentOfWinnings=0;
-		betSpots = new int[5];
-		token=0;
+		betSpots = new int[RouletteGame.MAX_STRAIGHT_NUMBERS];
+		tokenValue=0;
 		this.name = name;
 	}
 
@@ -59,5 +60,13 @@ public class Player {
 		}
 		
 		return bets;
+	}
+	
+	public int getTokenValue() {
+		return tokenValue;
+	}
+
+	public void setTokenValue(int tokenValue) {
+		this.tokenValue = tokenValue;
 	}
 }

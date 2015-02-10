@@ -9,7 +9,7 @@ public class VIP extends Player
 	{
 		super(name);
 		percentOfWinnings=VIP_Percent;
-		token=TOKEN_WORTH;
+		setTokenValue(TOKEN_WORTH);
 		currentFakeVal=0;
 	}
 	public void addFakeVal()
