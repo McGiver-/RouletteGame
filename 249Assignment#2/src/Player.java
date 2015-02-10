@@ -1,10 +1,10 @@
 
 public abstract class Player {
 
-	public double currentValue = 0;
-	public double percentOfWinnings;
-	int[] betSpots;
-	public final int timesBet = 35;
+	private double currentValue = 0;
+	private double percentOfWinnings;
+	private int[] betSpots;
+	private final int timesBet = 35;
 	private int tokenValue = 0;
 
 	private String name;
@@ -68,5 +68,25 @@ public abstract class Player {
 
 	public void setTokenValue(int tokenValue) {
 		this.tokenValue = tokenValue;
+	}
+
+	public int getTimesBet() {
+		return timesBet;
+	}
+
+	public double getPercentOfWinnings() {
+		return percentOfWinnings;
+	}
+
+	public void setPercentOfWinnings(double percentOfWinnings) {
+		this.percentOfWinnings = percentOfWinnings;
+	}
+
+	public double getCurrentValue() {
+		return currentValue;
+	}
+
+	public void setCurrentValue(double currentValue) {
+		this.currentValue = currentValue;
 	}
 }
