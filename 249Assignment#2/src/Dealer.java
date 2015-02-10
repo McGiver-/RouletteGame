@@ -14,6 +14,7 @@ public class Dealer
 				
 				for (int betIndex = 0; betIndex < bets.length; betIndex++) {
 					if (bets[betIndex] == winningNumber) {
+						players[playerIndex].addCurrentValue();
 						winningsAnnouncement += "Player " + playerIndex + " wins x";
 						break;
 					}
@@ -45,7 +46,8 @@ public class Dealer
 		Player[] players = game.getPlayers();
 		for (int i = 0; i < players.length; i++) {
 			if (players[i] != null) {
-				int[] bets = InputHelper.inputMaxNumbers("Player " + i + ": ", RouletteGame.MAX_STRAIGHT_NUMBERS);
+				int[] bets = InputHelper.inputMaxNumbers("Player " + i + ": ", RouletteGame.MAX_STRAIGHT_NUMBERS,
+						Player.EMPTY_BET_FILLER);
 				
 				for (int tokenSpot = 0; tokenSpot < bets.length; tokenSpot++) {
 					players[i].setToken(tokenSpot, bets[tokenSpot]);

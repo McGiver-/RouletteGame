@@ -7,6 +7,7 @@ public class Player {
 	public final int timesBet = 35;
 	public int token =0;
 	private String name;
+	public static final int EMPTY_BET_FILLER = -1;
 
 
 	public void addCurrentValue()
@@ -18,7 +19,7 @@ public class Player {
 	{
 		currentValue =0;
 		percentOfWinnings=0;
-		int[] betSpots = new int[5];
+		betSpots = new int[5];
 		token=0;
 		this.name = name;
 	}
@@ -37,10 +38,24 @@ public class Player {
 	}
 	// does this give the right number of bets because they have the option to pick less than 5 numbers
 	public int[] getBets() {
-		int[] bets = new int[betSpots.length];
+		int betsCount = 0;
+		
+		// count the number of non-empty bets
 		for (int i = 0; i < betSpots.length; i++) {
-			bets[i] = betSpots[i];
+			if (betSpots[i] != EMPTY_BET_FILLER) {
+				betsCount++;
+			}
 		}
+		
+		int[] bets = new int[betsCount];
+		int betCounter = 0;
+		for (int i = 0; i < betSpots.length; i++) {
+			if (betSpots[i] != EMPTY_BET_FILLER) {
+				bets[betCounter] = betSpots[i];
+				betCounter++;
+			}
+		}
+		
 		return bets;
 	}
 }

@@ -22,7 +22,7 @@ public class InputHelper {
 		return true;
 	}
 	
-	public static int[] inputMaxNumbers(String inputText, int length) {
+	public static int[] inputMaxNumbers(String inputText, int length, int filler) {
 		
 		// input all the numbers as strings
 		String[] inputs;
@@ -42,9 +42,15 @@ public class InputHelper {
 		
 		// we know the 'inputs' array contains only integers
 		// so, parse them
-		int[] numbers = new int[inputs.length];
+		int[] numbers = new int[length];
 		for (int i = 0; i < inputs.length; i++) {
 			numbers[i] = Integer.parseInt(inputs[i]);
+		}
+		
+		if (inputs.length < length) {
+			for (int i = inputs.length; i < length; i++) {
+				numbers[i] = filler;
+			}
 		}
 		
 		return numbers;
