@@ -4,14 +4,17 @@ import java.util.Scanner;
 public class InputHelper {
 	private static Scanner keyboard = new Scanner(System.in);
 	
-	private static boolean validateMaxIntegers(String[] numbers, int expectedLength) {
+	private static boolean validateMaxRangeIntegers(String[] numbers, int expectedLength, int low, int high) {
 		// if the array is not a right size, just return false now
 		if (numbers.length > expectedLength) return false;
 		
 		// try to parse all the strings to integer
 		try {
 			for (String num : numbers) {
-				Integer.parseInt(num);
+				int number = Integer.parseInt(num);
+				if (number > high || number < low) {
+					return false;
+				}
 			}
 		} catch (NumberFormatException e) {
 			// if one of them is not an integer, return false
@@ -31,8 +34,12 @@ public class InputHelper {
 			System.out.print(inputText);
 			inputs = keyboard.nextLine().split(" ");
 			
+			for (int i = 0; i < inputs.length; i++) {
+				inputs[i] = game.stringToStraightNumber(inputs[i]);
+			}
+			
 			// make sure they are integers
-			if (validateMaxIntegers(inputs, maxBets)) {
+			if (validateMaxRangeIntegers(inputs, maxBets, 0, game.getLayout().length-1)) {
 				break;
 			} else {
 				System.out.println("Bad input");
