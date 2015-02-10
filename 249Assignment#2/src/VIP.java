@@ -4,7 +4,12 @@ public class VIP extends Player
 	final double VIP_Percent = .10;
 	final double PERCENT_TOTAL_WINNINGS = .05;
 	final int TOKEN_WORTH=10;
-	public double currentFakeVal=0;
+	private double currentFakeVal=0;
+	private final String status = "vip";
+	
+	public String getStatus() {
+		return status;
+	}
 	public VIP(String name)
 	{
 		super(name);
@@ -47,4 +52,9 @@ public class VIP extends Player
 	public int getTOKEN_WORTH() {
 		return TOKEN_WORTH;
 	}
+	public String toString()
+	{
+		return super.toString()+"\nDifferent Money winnings so far:"+this.getCurrentFakeVal();
+	}
+	
 }

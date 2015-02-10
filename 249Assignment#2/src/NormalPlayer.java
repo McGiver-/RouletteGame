@@ -3,7 +3,13 @@ public class NormalPlayer extends Player
 {
 	final int TOKEN_WORTH=5;
 	private String name;
+	private final String status = "normal";
+
 	
+	public String getStatus() {
+		return status;
+	}
+
 	public NormalPlayer(String name)
 	{
 
@@ -11,14 +17,7 @@ public class NormalPlayer extends Player
 		setTokenValue(TOKEN_WORTH);
 	}
 	
-	public boolean equals(Player p) {
-		// TODO equal method work for NormalPlayer
-		if (this.name.equals(p.getName())) {
-			return true;
-		}
-		
-		return false;
-	}
+
 	public boolean equals(NormalPlayer p)
 	{
 		return (super.equals(p)
@@ -36,4 +35,5 @@ public class NormalPlayer extends Player
 	public int getTOKEN_WORTH() {
 		return TOKEN_WORTH;
 	}
+	//toString is the same as the parent class
 }

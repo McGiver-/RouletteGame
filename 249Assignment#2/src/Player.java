@@ -6,7 +6,15 @@ public abstract class Player {
 	private int[] betSpots;
 	private final int timesBet = 35;
 	private int tokenValue = 0;
+	private String status = null;
 
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	private String name;
 	public static final int EMPTY_BET_FILLER = -1;
 
@@ -100,6 +108,13 @@ public abstract class Player {
 		return (this.getCurrentValue()==p.getCurrentValue()
 				&&this.getTimesBet()==p.getTimesBet()
 				&&sameBets
-				&&this.getName().equals(getName()));
+				&&this.getName().equals(getName())
+				&&this.getStatus()==p.getStatus());
+	}
+	public String toString()
+	{
+		return "Player name:"+this.getName()+"\nStatus:"+this.getStatus()
+				+"\n Bets made this round: "+this.getBets()
+				+"\n Winnings so far:"+this.getCurrentValue();
 	}
 }
