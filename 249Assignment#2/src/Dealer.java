@@ -7,20 +7,28 @@ public class Dealer
 	private String winningsAnnouncement;
 	
 	public void calculateWinnings(final int winningNumber) {
+		int totalRoundWinnings = 0;
+		int totalRoundBets = 0;
+		
 		Player[] players = game.getPlayers();
 		for (int playerIndex = 0; playerIndex < players.length; playerIndex++) {
 			if (players[playerIndex] != null) {
 				int[] bets = players[playerIndex].getBets();
+				totalRoundBets += bets.length;
 				
 				for (int betIndex = 0; betIndex < bets.length; betIndex++) {
 					if (bets[betIndex] == winningNumber) {
-						players[playerIndex].addCurrentValue();
-						winningsAnnouncement += "Player " + playerIndex + " wins x";
+						int playerWinnings = players[playerIndex].addCurrentValue();
+						totalRoundWinnings += playerWinnings;
+						winningsAnnouncement += "Player " + playerIndex + " wins " + playerWinnings;
 						break;
 					}
 				}
 			}
 		}
+		
+		game.addWinnings(totalRoundWinnings);
+		game.addBets(totalRoundBets);
 	}
 	
 	public void setRouletteGame(RouletteGame rg) {
