@@ -1,4 +1,12 @@
-
+/**
+ * 
+ * @author Mario, George
+ *This is a Player that interacts with the Roulette game and dealer.
+ *The Player is capable of holding bets,and calculating his winnings.
+ *This is the parent of VIP and NormalPlayer
+ *@see Dealer
+ *@see RouletteGame
+ */
 public abstract class Player {
 
 	private double currentValue = 0;
@@ -7,25 +15,37 @@ public abstract class Player {
 	private final int timesBet = 35;
 	private int tokenValue = 0;
 	private String status = null;
-
+	private String name;
+	public static final int EMPTY_BET_FILLER = -1;
+	
+	/**
+	 * Get the players status
+	 * @return status 
+	 */
 	public String getStatus() {
 		return status;
 	}
-
+	/**
+	 * Set the player's status
+	 * @param status
+	 */
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	private String name;
-	public static final int EMPTY_BET_FILLER = -1;
-
-
+	/**
+	 * adds the current winnings to the current value
+	 * @return CurrentValue
+	 */
 	public int addCurrentValue()
 	{
 		currentValue= currentValue+timesBet*tokenValue;
 		
 		return timesBet*tokenValue;
 	}
-	
+	/**
+	 * Player constructor
+	 * @param name
+	 */
 	public Player(String name)
 	{
 		currentValue =0;
@@ -35,19 +55,33 @@ public abstract class Player {
 		this.name = name;
 	}
 
+	/**
+	 * get the name of the player
+	 * @return name
+	 */
 	public String getName() {
 		return name;
 	}
-
+	/**
+	 * set the name of the player
+	 * @param name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	/**
+	 * sets the token in his array of possibilities and the spot is the number chosen
+	 * @param number
+	 * @param spot
+	 */
 	public void setToken(int number,int spot)
 	{
 		this.betSpots[number]=spot;
 	}
-	// does this give the right number of bets because they have the option to pick less than 5 numbers
+	/**
+	 * gets the array of bets 
+	 * @return bets array
+	 */
 	public int[] getBets() {
 		int betsCount = 0;
 		
@@ -69,34 +103,60 @@ public abstract class Player {
 		
 		return bets;
 	}
-	
+	/**
+	 * get the token value 
+	 * @return tokenvalue
+	 */
 	public int getTokenValue() {
 		return tokenValue;
 	}
-
+	/**
+	 * set the token value
+	 * @param tokenValue
+	 */
 	public void setTokenValue(int tokenValue) {
 		this.tokenValue = tokenValue;
 	}
-
+	/**
+	 * get the payout multiplier
+	 * @return timesBet
+	 */
 	public int getTimesBet() {
 		return timesBet;
 	}
-
+	/**
+	 * gets the percentage of the winnings 
+	 * @return percentage of winnings 
+	 */
 	public double getPercentOfWinnings() {
 		return percentOfWinnings;
 	}
-
+	/**
+	 * set teh percentage of winnings 
+	 * @param percentOfWinnings
+	 */
 	public void setPercentOfWinnings(double percentOfWinnings) {
 		this.percentOfWinnings = percentOfWinnings;
 	}
-
+	/**
+	 * get the current value of real money
+	 * @return currentvalue
+	 */
 	public double getCurrentValue() {
 		return currentValue;
 	}
-
+	/**
+	 * set current value of real money
+	 * @param currentValue
+	 */
 	public void setCurrentValue(double currentValue) {
 		this.currentValue = currentValue;
 	}
+	/**
+	 * equals class checks if the same object and variables
+	 * @param p
+	 * @return
+	 */
 	public boolean equals(Player p)
 	{
 		boolean sameBets =false;
@@ -111,6 +171,9 @@ public abstract class Player {
 				&&this.getName().equals(getName())
 				&&this.getStatus()==p.getStatus());
 	}
+	/**
+	 * will print this out when player object is called
+	 */
 	public String toString()
 	{
 		return "Player name:"+this.getName()+"\nStatus:"+this.getStatus()
