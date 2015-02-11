@@ -1,40 +1,22 @@
-
+/**
+ * Dealer class operates an instance of RouletteGame by spinning it, calculating the winnings
+ * and paying them out the players as well as making the announcements.
+ * @author Mario Lamontagne
+ *
+ */
 
 public class Dealer
 {
-	private double winningsPersonThisRound;
-	private RouletteGame game;
-	private String winningsAnnouncement;
+	private RouletteGame game; // the game that the dealer is in charge of
+	private String winningsAnnouncement; // holds the announcements for this round
 	
-	public void calculateWinnings(final int winningNumber) {
-		int totalRoundWinnings = 0;
-		int totalRoundBets = 0;
-		
-		Player[] players = game.getPlayers();
-		for (int playerIndex = 0; playerIndex < players.length; playerIndex++) {
-			if (players[playerIndex] != null) {
-				int[] bets = players[playerIndex].getBets();
-				totalRoundBets += bets.length;
-				
-				for (int betIndex = 0; betIndex < bets.length; betIndex++) {
-					if (bets[betIndex] == winningNumber) {
-						int playerWinnings = players[playerIndex].addCurrentValue();
-						totalRoundWinnings += playerWinnings;
-						winningsAnnouncement += "Player " + playerIndex + " wins " + playerWinnings;
-						break;
-					}
-				}
-			}
-		}
-		
-		game.addWinnings(totalRoundWinnings);
-		game.addBets(totalRoundBets);
-	}
 	
-	public void setRouletteGame(RouletteGame rg) {
-		game = rg;
-	}
+
 	
+	/**
+	 * Will freeze the bets made by players, and then spins the wheel, calculates the winnings
+	 * for each player, announces the winnings, and resets the bets.
+	 */
 	public void turnWheel() {
 		if (game == null) {
 			System.out.println("This dealer is not in charge of any roulette game");
@@ -45,10 +27,15 @@ public class Dealer
 		int winningNumber = game.spin();
 		winningsAnnouncement += winningNumber + " is the winning number.";
 		calculateWinnings(winningNumber);
+		announceWinnings();
 		game.resetBets();
+		game.nextRound();
 	}
 	
 
+	/**
+	 * Will input the bets for all players
+	 */
 	public void inputBets() {
 		System.out.println();
 		System.out.println("Round #" + game.getRound());
@@ -64,14 +51,60 @@ public class Dealer
 		}
 	}
 
-	public void announceWinnings() {
-		System.out.println("Winnings");
-		System.out.println("----------");
-		System.out.println(winningsAnnouncement);
-	}
 	
 	public String toString() {
-		// TODO Dealer string representation
-		return "";
+		String output = "";
+		output += "Dealer currently associated with table:";
+		return output;
+	}
+	
+	public boolean equals(Dealer d) {
+		if (d.getGame().equals(this.getClass())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public RouletteGame getGame() {
+		return game;
+	}
+
+	public void setGame(RouletteGame game) {
+		this.game = game;
+	}
+	
+	private void calculateWinnings(final int winningNumber) {
+		int totalRoundWinnings = 0;
+		int totalRoundBets = 0;
+		
+		Player[] players = game.getPlayers();
+		for (int playerIndex = 0; playerIndex < players.length; playerIndex++) {
+			if (players[playerIndex] != null) {
+				int[] bets = players[playerIndex].getBets();
+				totalRoundBets += bets.length;
+				
+				for (int betIndex = 0; betIndex < bets.length; betIndex++) {
+					if (bets[betIndex] == winningNumber) {
+						int playerWinnings = players[playerIndex].addCurrentValue();
+						totalRoundWinnings += playerWinnings;
+						winningsAnnouncement += "\nPlayer " + playerIndex + " wins " + playerWinnings;
+						break;
+					}
+				}
+			}
+		}
+		
+		winningsAnnouncement += "\n\n";
+		
+		game.addWinnings(totalRoundWinnings);
+		game.addBets(totalRoundBets);
+	}
+	
+	private void announceWinnings() {
+		System.out.println();
+		System.out.println("Winnings For Round #" + game.getRound());
+		System.out.println("------------------------");
+		System.out.println(winningsAnnouncement);
 	}
 }

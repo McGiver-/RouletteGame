@@ -1,22 +1,28 @@
 import java.util.Random;
 
+/**
+ * Abstract class that defines a RouletteGame and holds its players, and other useful variables.
+ * @author Mario Lamontagne
+ *
+ */
+
 public abstract class RouletteGame {
 	private static Random rand = new Random();
-	private int tableWinnings;
-	private int tableBets;
-	private Player[] players;
-	private int round;
+	private int tableWinnings; // holds the total 'payouts'
+	private int tableBets; // holds the total bets by players
+	private Player[] players; // players at the table
+	private int round; // current round
 	public static final int MAX_PLAYERS = 6;
 	public static final int MAX_STRAIGHT_NUMBERS = 5;
-
-	public void addWinnings(int winningsThisRound) {
-		tableWinnings += winningsThisRound;
-	}
 
 	public RouletteGame() {
 		tableWinnings = 0;
 		round = 1;
 		players = new Player[MAX_PLAYERS];
+	}
+	
+	public void addWinnings(int winningsThisRound) {
+		tableWinnings += winningsThisRound;
 	}
 
 	public String toString() {
@@ -71,8 +77,11 @@ public abstract class RouletteGame {
 		players[index] = player;
 	}
 
-	public void removePlayer(int index) {
+	public Player removePlayer(int index) {
+		Player player = players[index];
 		players[index] = null;
+		
+		return player;
 	}
 
 	public Player[] getPlayers() {
@@ -82,12 +91,15 @@ public abstract class RouletteGame {
 	public abstract String[] getLayout();
 
 	public int spin() {
-		round++;
 		return /*rand.nextInt(getLayout().length)*/0;
 	}
 	
 	public int getRound() {
 		return round;
+	}
+	
+	public void nextRound() {
+		round++;
 	}
 
 	public void addBets(int totalRoundBets) {

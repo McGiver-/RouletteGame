@@ -13,6 +13,10 @@ public class AmericanRoulette extends RouletteGame {
 		return LAYOUT;
 	}
 
+	/**
+	 * This method makes sure that the string 00 is converted to 37 (represents 00)
+	 * because 00 would otherwise be converted to 0
+	 */
 	@Override
 	public String stringToStraightNumber(String straight) {
 		if (straight.equals("00")) {

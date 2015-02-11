@@ -14,6 +14,10 @@ public class EuropeanRoulette extends RouletteGame {
 		return LAYOUT;
 	}
 
+	/**
+	 * Fills the need to implement the abstract method. No need to change
+	 * the input since all numbers in LAYOUT are distinct numbers.
+	 */
 	@Override
 	public String stringToStraightNumber(String straight) {
 		return straight;
