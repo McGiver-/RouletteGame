@@ -1,3 +1,10 @@
+/**
+ * Implementation of the RouletteGame class using the layout and rules of an american roulette game.
+ * @author Mario Lamontagne
+ * @see RouletteGame
+ * @see EuropeanRoulette
+ */
+
 public class AmericanRoulette extends RouletteGame {
 	private static final String[] LAYOUT = { "0", "28", "9", "26", "30", "11",
 			"7", "20", "32", "17", "5", "22", "34", "15", "3", "24", "36",

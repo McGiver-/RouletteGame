@@ -1,4 +1,9 @@
-
+/**
+ * Implementation of the RouletteGame class using the layout and rules of a 
+ * european roulette game.
+ * @author Mario
+ *
+ */
 public class EuropeanRoulette extends RouletteGame {
 	private static final String[] LAYOUT = { "0", "32", "15", "19", "4", "21",
 			"2", "25", "17", "34", "6", "27", "13", "36", "11", "30", "8", "23", "10", "5",

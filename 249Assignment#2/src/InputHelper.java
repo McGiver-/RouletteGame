@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
-
+/**
+ * Helper class (static methods) to input the bets by players
+ * @author Mario
+ *
+ */
 public class InputHelper {
 	private static Scanner keyboard = new Scanner(System.in);
 	
@@ -25,6 +29,12 @@ public class InputHelper {
 		return true;
 	}
 	
+	/**
+	 * Input the bets of one players in a roulette game
+	 * @param inputText The text presented to the user
+	 * @param game The instance of a RouletteGame from which the players come from
+	 * @return
+	 */
 	public static int[] inputBets(String inputText, RouletteGame game) {
 		int maxBets = RouletteGame.MAX_STRAIGHT_NUMBERS;
 		

@@ -21,8 +21,16 @@ public abstract class RouletteGame {
 		players = new Player[MAX_PLAYERS];
 	}
 	
+	/**
+	 * Adds the winnings from this round to the total winnings
+	 * @param winningsThisRound Winnings to add to the total
+	 */
 	public void addWinnings(int winningsThisRound) {
 		tableWinnings += winningsThisRound;
+	}
+	
+	public void addBets(int totalRoundBets) {
+		tableBets += totalRoundBets;
 	}
 
 	public String toString() {
@@ -74,10 +82,19 @@ public abstract class RouletteGame {
 	}
 
 	public void setPlayer(Player player, int index) {
+		if (index < 0 || index >= players.length) throw new IndexOutOfBoundsException();
+		
 		players[index] = player;
 	}
 
+	/**
+	 * Removes a player from the table and returns its instance
+	 * @param index Index of the player at the table
+	 * @return The player removed from the table
+	 */
 	public Player removePlayer(int index) {
+		if (index < 0 || index >= players.length)  throw new IndexOutOfBoundsException();
+		
 		Player player = players[index];
 		players[index] = null;
 		
@@ -90,8 +107,12 @@ public abstract class RouletteGame {
 
 	public abstract String[] getLayout();
 
+	/**
+	 * Generates a random number in the table
+	 * @return The random number generated
+	 */
 	public int spin() {
-		return /*rand.nextInt(getLayout().length)*/0;
+		return rand.nextInt(getLayout().length);
 	}
 	
 	public int getRound() {
@@ -102,15 +123,20 @@ public abstract class RouletteGame {
 		round++;
 	}
 
-	public void addBets(int totalRoundBets) {
-		tableBets += totalRoundBets;
-	}
-
+	
+	/**
+	 * Resets all the bets of the players at the table
+	 */
 	public void resetBets() {
+		// go through all players
 		for (int i = 0; i < players.length; i++) {
+			// if there is a player seated at that spot
 			if (players[i] != null) {
-				for (int token = 0; token < RouletteGame.MAX_STRAIGHT_NUMBERS; token++)
-				players[i].setToken(token, Player.EMPTY_BET_FILLER);
+				// fill the bets array with the appropriate flag
+				for (int token = 0; token < RouletteGame.MAX_STRAIGHT_NUMBERS; token++) {
+					players[i].setToken(token, Player.EMPTY_BET_FILLER);
+				}
+				
 			}
 		}
 		

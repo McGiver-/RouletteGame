@@ -10,9 +10,6 @@ public class Dealer
 	private RouletteGame game; // the game that the dealer is in charge of
 	private String winningsAnnouncement; // holds the announcements for this round
 	
-	
-
-	
 	/**
 	 * Will freeze the bets made by players, and then spins the wheel, calculates the winnings
 	 * for each player, announces the winnings, and resets the bets.
