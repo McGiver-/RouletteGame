@@ -31,8 +31,8 @@ public class VIP extends Player
 	/**
 	 * Adds to the fake Value 
 	 */
-	public void addFakeVal()
-	{// this is dependent on whether getbets.lenght gives me the number of bets the player placed
+	private void addFakeVal()
+	{
 		currentFakeVal=currentFakeVal+getTimesBet()*VIP_Percent+getBets().length*PERCENT_TOTAL_WINNINGS;
 	}
 	
