@@ -1,6 +1,7 @@
 - Rewards for VIP class (addWinnings() method) DONE
-- equals() method for every class
-- toString() method for every class
-- javadoc for the classes and methods
+- equals() method for every class DONE
+- toString() method for every class DONE
+- javadoc for the classes and methods DONE
 - Finish input in dealer class DONE
-- UML diagram
+- UML diagram DONE
+- Test cases
