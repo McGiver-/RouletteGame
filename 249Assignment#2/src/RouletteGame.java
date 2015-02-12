@@ -46,7 +46,7 @@ public abstract class RouletteGame {
 			output += item + " ";
 		}
 		
-		output += "\n\nPlayers:\n";
+		output += "\n\n";
 		for (int i = 0; i < players.length; i++) {
 			output += "Player " + i + ": ";
 			if (players[i] == null) {

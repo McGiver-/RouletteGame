@@ -6,7 +6,7 @@
  */
 public class NormalPlayer extends Player
 {
-	final int TOKEN_WORTH=5;
+	private final int TOKEN_WORTH=5;
 
 	/**
 	 * constructor

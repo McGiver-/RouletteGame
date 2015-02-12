@@ -75,12 +75,16 @@ public class Dealer
 		int totalRoundWinnings = 0;
 		int totalRoundBets = 0;
 		
+		boolean winner = false;
+		
+		// check all players to see if they win
 		Player[] players = game.getPlayers();
 		for (int playerIndex = 0; playerIndex < players.length; playerIndex++) {
 			if (players[playerIndex] != null) {
 				int[] bets = players[playerIndex].getBets();
 				totalRoundBets += bets.length;
 				
+				// check every bet spot to see if it matches the winning number
 				for (int betIndex = 0; betIndex < bets.length; betIndex++) {
 					if (bets[betIndex] == winningNumber) {
 						int playerWinnings = players[playerIndex].addCurrentValue();
@@ -92,7 +96,11 @@ public class Dealer
 			}
 		}
 		
-		winningsAnnouncement += "\n\n";
+		if (!winner) {
+			winningsAnnouncement += "\nNo winners.";
+		}
+		
+		winningsAnnouncement += "\n";
 		
 		game.addWinnings(totalRoundWinnings);
 		game.addBets(totalRoundBets);
