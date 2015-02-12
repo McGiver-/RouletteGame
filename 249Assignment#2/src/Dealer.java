@@ -36,6 +36,7 @@ public class Dealer
 	public void inputBets() {
 		System.out.println();
 		System.out.println("Round #" + game.getRound());
+		System.out.println("Dealer: Please input a maximum of " + RouletteGame.MAX_STRAIGHT_NUMBERS + " bets (separated by spaces)");
 		Player[] players = game.getPlayers();
 		for (int i = 0; i < players.length; i++) {
 			if (players[i] != null) {
@@ -87,6 +88,7 @@ public class Dealer
 				// check every bet spot to see if it matches the winning number
 				for (int betIndex = 0; betIndex < bets.length; betIndex++) {
 					if (bets[betIndex] == winningNumber) {
+						winner = true;
 						int playerWinnings = players[playerIndex].addCurrentValue();
 						totalRoundWinnings += playerWinnings;
 						winningsAnnouncement += "\nPlayer " + playerIndex + " wins " + playerWinnings;
