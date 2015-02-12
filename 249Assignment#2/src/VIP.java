@@ -10,10 +10,10 @@
 public class VIP extends Player
 {
 
-	final double VIP_Percent = .10;
-	final double PERCENT_TOTAL_WINNINGS = .05;
-	final int TOKEN_WORTH=10;
-	private double currentFakeVal=0;
+	private final double VIP_Percent = .10;
+	private final double PERCENT_TOTAL_WINNINGS = .05;
+	private final int TOKEN_WORTH=10;
+	private double currentFakeVal=0; // tracks the bonus points
 	
 	/**
 	 * Constructor
@@ -27,6 +27,7 @@ public class VIP extends Player
 		this.setCurrentFakeVal(0);
 		this.setStatus("vip");
 	}
+	
 	/**
 	 * Adds to the fake Value 
 	 */
@@ -46,7 +47,7 @@ public class VIP extends Player
 		
 		return getTimesBet()*TOKEN_WORTH;
 	}
-	// not sure if take vip or player as argument
+	
 	/**
 	 * checks if the object and variables are the same 
 	 * @param p

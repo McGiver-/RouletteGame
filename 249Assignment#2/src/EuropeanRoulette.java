@@ -1,7 +1,9 @@
 /**
  * Implementation of the RouletteGame class using the layout and rules of a 
  * european roulette game.
- * @author Mario
+ * @author Mario, George
+ * @see EuropeanRoulette
+ * @see RouletteGame
  *
  */
 public class EuropeanRoulette extends RouletteGame {

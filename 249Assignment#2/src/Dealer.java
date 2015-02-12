@@ -1,7 +1,7 @@
 /**
  * Dealer class operates an instance of RouletteGame by spinning it, calculating the winnings
  * and paying them out the players as well as making the announcements.
- * @author Mario Lamontagne
+ * @author Mario, George
  *
  */
 

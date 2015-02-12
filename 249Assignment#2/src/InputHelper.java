@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * Helper class (static methods) to input the bets by players
- * @author Mario
+ * @author Mario Lamontagne
  *
  */
 public class InputHelper {

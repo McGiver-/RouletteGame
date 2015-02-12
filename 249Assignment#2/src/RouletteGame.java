@@ -2,7 +2,7 @@ import java.util.Random;
 
 /**
  * Abstract class that defines a RouletteGame and holds its players, and other useful variables.
- * @author Mario Lamontagne
+ * @author Mario, George
  *
  */
 
@@ -29,6 +29,10 @@ public abstract class RouletteGame {
 		tableWinnings += winningsThisRound;
 	}
 	
+	/**
+	 * Adds number of bets to the tracker
+	 * @param totalRoundBets Number of bets made in this round
+	 */
 	public void addBets(int totalRoundBets) {
 		tableBets += totalRoundBets;
 	}
@@ -60,6 +64,12 @@ public abstract class RouletteGame {
 		return output;
 	}
 	
+	/**
+	 * Compares two RouletteGame objects
+	 * @param otherGame
+	 * @return True if the two roulette games come from the same class, have the same winnings,
+	 *    number of bets, and same players at the table. Returns false otherwise.
+	 */
 	public boolean equals(RouletteGame otherGame) {
 		if (otherGame.getClass().equals(this.getClass())) {
 			if (otherGame.getRound() == getRound() && otherGame.getTableWinnings() == getTableWinnings() 
@@ -81,6 +91,11 @@ public abstract class RouletteGame {
 		}
 	}
 
+	/**
+	 * Changes the reference of a player
+	 * @param player Player New player to add
+	 * @param index int Place to add the player (must be in the right range)
+	 */
 	public void setPlayer(Player player, int index) {
 		if (index < 0 || index >= players.length) throw new IndexOutOfBoundsException();
 		
@@ -105,6 +120,10 @@ public abstract class RouletteGame {
 		return players;
 	}
 
+	/**
+	 * Returns the layout of the game
+	 * @return An array containing all strings in the roulette layout
+	 */
 	public abstract String[] getLayout();
 
 	/**

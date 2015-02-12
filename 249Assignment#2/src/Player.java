@@ -9,14 +9,27 @@
  */
 public abstract class Player {
 
-	private double currentValue = 0;
-	private double percentOfWinnings;
-	private int[] betSpots;
-	private final int timesBet = 35;
-	private int tokenValue = 0;
-	private String status = null;
-	private String name;
+	private double currentValue = 0; // tracks the current winnings
+	private double percentOfWinnings; // how much bonus points the player gets
+	private int[] betSpots; // stores the bets made by the player
+	private final int timesBet = 35; // multiplier per right bet
+	private int tokenValue = 0; // value of the token used by the player
+	private String status = null; // vip or normal
+	private String name; // Name of the player
 	public static final int EMPTY_BET_FILLER = -1;
+	
+	/**
+	 * Player constructor
+	 * @param name
+	 */
+	public Player(String name)
+	{
+		currentValue =0;
+		percentOfWinnings=0;
+		betSpots = new int[RouletteGame.MAX_STRAIGHT_NUMBERS];
+		tokenValue=0;
+		this.name = name;
+	}
 	
 	/**
 	 * Get the players status
@@ -42,18 +55,7 @@ public abstract class Player {
 		
 		return timesBet*tokenValue;
 	}
-	/**
-	 * Player constructor
-	 * @param name
-	 */
-	public Player(String name)
-	{
-		currentValue =0;
-		percentOfWinnings=0;
-		betSpots = new int[RouletteGame.MAX_STRAIGHT_NUMBERS];
-		tokenValue=0;
-		this.name = name;
-	}
+
 
 	/**
 	 * get the name of the player

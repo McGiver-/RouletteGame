@@ -1,6 +1,6 @@
 /**
  * Implementation of the RouletteGame class using the layout and rules of an american roulette game.
- * @author Mario Lamontagne
+ * @author Mario, George
  * @see RouletteGame
  * @see EuropeanRoulette
  */
