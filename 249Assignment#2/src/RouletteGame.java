@@ -53,6 +53,7 @@ public abstract class RouletteGame {
 				output += "empty";
 			} else {
 				output += players[i].getName();
+				output += (players[i].getStatus().equals("vip")) ? " (VIP)" : "";
 			}
 			output += "\n";
 		}

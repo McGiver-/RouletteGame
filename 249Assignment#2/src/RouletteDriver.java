@@ -7,9 +7,12 @@ public class RouletteDriver {
 		Dealer dealer = new Dealer();
 		dealer.setGame(game);
 		
-		game.setPlayer(new NormalPlayer("Test 1"), 0);
-		game.setPlayer(new NormalPlayer("Test 2"), 1);
-		game.setPlayer(new VIP("VIP test"), 2);
+		game.setPlayer(new NormalPlayer("Walter White"), 0);
+		game.setPlayer(new NormalPlayer("Joe Blow"), 1);
+		game.setPlayer(new VIP("Bill Gates"), 2);
+		game.setPlayer(new VIP("Barack Obama"), 3);
+		game.setPlayer(new VIP("Mark Zuckerberg"), 4);
+		game.setPlayer(new NormalPlayer("Saul Goodman"), 5);
 		
 		System.out.println(game);
 		
