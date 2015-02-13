@@ -1,0 +1,84 @@
+ROULETTE TABLE
+-------------
+Layout: 0 32 15 19 4 21 2 25 17 34 6 27 13 36 11 30 8 23 10 5 24 16 33 1 20 14 31 9 22 18 29 7 28 12 35 3 26 
+
+Player 0: Walter White
+Player 1: Joe Blow
+Player 2: Bill Gates (VIP)
+Player 3: Barack Obama (VIP)
+Player 4: Mark Zuckerberg (VIP)
+Player 5: Saul Goodman
+
+Total Winnings ($): 0
+Total Bets: 0
+
+
+
+Round #1
+Dealer: Please input a maximum of 5 bets (separated by spaces)
+Player 0: 1 2 3 4 5
+Player 1: 6 7 8 9 10
+Player 2: 11 12 13 14 15
+Player 3: 16 17 18 19 20
+Player 4: 21 22 23 24 25
+Player 5: 26 27 28 29 30
+
+Winnings For Round #1
+------------------------
+0 is the winning number.
+No winners.
+
+
+Round #2
+Dealer: Please input a maximum of 5 bets (separated by spaces)
+Player 0: 1
+Player 1: 1 2
+Player 2: 1 2 3
+Player 3: 1 2 3 4
+Player 4: 1 2 3 4 5
+Player 5: 1 2 3 4
+
+Winnings For Round #2
+------------------------
+35 is the winning number.
+No winners.
+
+
+Round #3
+Dealer: Please input a maximum of 5 bets (separated by spaces)
+Player 0: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+
+Winnings For Round #3
+------------------------
+4 is the winning number.
+No winners.
+
+
+Round #4
+Dealer: Please input a maximum of 5 bets (separated by spaces)
+Player 0: trying to break the input
+Bad input
+Player 0: you see, it doesnt work
+Bad input
+Player 0: even if I put a negative number
+Bad input
+Player 0: -1
+Bad input
+Player 0: Told ya
+Bad input
+Player 0: 1
+Player 1: 1 2
+Player 2: 1 2 3
+Player 3: 1 2
+Player 4: 1
+Player 5: 1
+
+Winnings For Round #4
+------------------------
+34 is the winning number.
+No winners.
